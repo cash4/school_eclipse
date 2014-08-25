@@ -16,7 +16,7 @@ public class ComputeFactorialScanner {
 	 */
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		// create scanner
+		//Create scanner
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter a nonnegative integer: ");
 		int n = input.nextInt();
