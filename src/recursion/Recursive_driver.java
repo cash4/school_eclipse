@@ -51,7 +51,7 @@ public class Recursive_driver {
 		// TODO Auto-generated method stub
 		//System.out.println("hello");
 		
-		int x = 2;
+		int x = 3;
 		int n = 3;
 		System.out.println("power nr " + Power_nr(x,n));
 		if (n>=1)
