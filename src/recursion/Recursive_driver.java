@@ -53,9 +53,9 @@ public class Recursive_driver {
 		
 		int x = 15;
 		int n = 3;
-		System.out.println("power (non-recursive) of " + n + " to the " + x + " is " + Power_nr(x,n));
+		System.out.println("power (non-recursive) of " + x + " to the " + n + " is " + Power_nr(x,n));
 		if (n>=1)
-		   System.out.println("power of " + n + " to the " + x + " is " + Power(x,n));
+		   System.out.println("power of " + x + " to the " + n + " is " + Power(x,n));
 		else 
 		{
 			int result = Power(x,0-n);
