@@ -4,6 +4,7 @@
 package jira_file_attatcher;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -89,8 +90,8 @@ public class File_Attacher {
 		if (children == null){
 			System.out.println("Either dir does not exist or is not a directory");
 		}
-		else {
-			
+		else 
+		{			
 			Path FROM = Paths.get(fromPath1);
 			Path TO = Paths.get(newDirectory + "/" + unitSerialNumber + ".pdf");
 			Files.copy(FROM, TO, StandardCopyOption.COPY_ATTRIBUTES);
@@ -100,11 +101,9 @@ public class File_Attacher {
 		FilenameFilter filter2 = new FilenameFilter() {
 			
 			@Override
-			public boolean accept(File fromDir2, String name) {
-				// TODO Auto-generated method stub
-				
-				return name.contains("FullSystemTest");
-				
+			public boolean accept(File fromDir2, String name)
+			{
+				return name.contains("DUh");				
 			}
 		};
 		
@@ -113,9 +112,25 @@ public class File_Attacher {
 			System.out.println("Either dir does not exist or is not a directory");
 		}
 		else {
-			
+			File[] newestFullSystemTest = fromDir2.listFiles(new FileFilter() {
+				
+				@Override
+				public boolean accept(File file) {
+					// TODO Auto-generated method stub
+					return file.isFile();
+				}
+			});
+			long lastMod = Long.MIN_VALUE;
+			File fullSystemTest = null;
+			for (File file : newestFullSystemTest){
+				if (file.lastModified() > lastMod){
+					fullSystemTest = file;
+					lastMod = file.lastModified();
+				}
+			}
+			//String fullSystemTest = Paths.get(fromPath2).getFileName().toString();
 			Path FROM = Paths.get(fromPath2);
-			Path TO = Paths.get(newDirectory +"/" + unitSerialNumber + ".rtf");
+			Path TO = Paths.get(newDirectory +"/" + fullSystemTest);
 			Files.copy(FROM, TO, StandardCopyOption.COPY_ATTRIBUTES);
 		}
 		
