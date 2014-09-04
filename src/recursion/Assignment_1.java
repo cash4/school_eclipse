@@ -107,8 +107,8 @@ public class Assignment_1 {
 		String s3 = "gohangasalamiimalasagnahog";
 		String s4 = "alias";
 		int i1 = 10000;
-		int gcd1 = 222;
-		int gcd2 = 111;
+		int gcd1 = 200;
+		int gcd2 = 98;
 		System.out.println("Is " + s1 + " a palindrome? " + isPalindrome_r(s1));
 		System.out.println("Is " + s2 + " a palindrome? " + isPalindrome_r(s2));
 		System.out.println("Is " + s3 + " a palindrome? " + isPalindrome_r(s3));
