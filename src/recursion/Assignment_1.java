@@ -67,6 +67,15 @@ public class Assignment_1 {
 		}
 		
 	}
+	//this method non-recursively computes Sum(n)=1+1/2+1/3+...+1/n
+	public static double sum_nr(double n){
+		double result = 0;
+		for (int i=1; i<=n; i++){
+			result = 1/i + 1/n;
+			n--;
+		}
+		return result;
+	}
 	/**
 	 * @param args
 	 */
@@ -87,6 +96,7 @@ public class Assignment_1 {
 		System.out.println("Is " + s4 + " a palindrome? " + isPalindrome_nr(s4));
 		
 		System.out.println("Sum_r of " + i1 + " is " + sum_r(i1));
+		System.out.println("Sum_nr of " + i1 + " is " + sum_nr(i1));
 	}
 
 }
