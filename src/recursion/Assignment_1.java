@@ -71,8 +71,29 @@ public class Assignment_1 {
 	public static double sum_nr(double n){
 		double result = 0;
 		for (int i=1; i<=n; i++){
-			result = 1/i + 1/n;
-			n--;
+			result = result + (double)1/i;
+		}
+		return result;
+	}
+	
+	//this method allows you to recursively compute the greatest common divisor of two 
+	//positive integer numbers
+	public static double getGcd_r(int m, int n){
+		if (m == 0 || n == 0){
+			return m+n;
+		}
+		else {
+			return getGcd_r(n, m%n);
+		}
+	}
+	//this method allows you to non-recursively compute the greatest common divisor of two
+	//positive integer numbers
+	public static double getGcd_nr(int m, int n){
+		int result = 0;
+		while (m != 0 && n != 0){
+			result = n;
+			n = m%n;
+			m = result;
 		}
 		return result;
 	}
@@ -85,7 +106,9 @@ public class Assignment_1 {
 		String s2 = "radar";
 		String s3 = "gohangasalamiimalasagnahog";
 		String s4 = "alias";
-		double i1 = 10000;
+		int i1 = 10000;
+		int gcd1 = 222;
+		int gcd2 = 111;
 		System.out.println("Is " + s1 + " a palindrome? " + isPalindrome_r(s1));
 		System.out.println("Is " + s2 + " a palindrome? " + isPalindrome_r(s2));
 		System.out.println("Is " + s3 + " a palindrome? " + isPalindrome_r(s3));
@@ -97,6 +120,9 @@ public class Assignment_1 {
 		
 		System.out.println("Sum_r of " + i1 + " is " + sum_r(i1));
 		System.out.println("Sum_nr of " + i1 + " is " + sum_nr(i1));
+		
+		System.out.println("GCD of " + gcd1 + " and " + gcd2 + " is: " + getGcd_r(gcd1, gcd2));
+		System.out.println("GCD of " + gcd1 + " and " + gcd2 + " is: " + getGcd_nr(gcd1, gcd2));
 	}
 
 }
