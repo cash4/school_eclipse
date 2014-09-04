@@ -52,17 +52,18 @@ public class Recursive_driver {
 		//System.out.println("hello");
 		
 		int x = 3;
+		//int x = 15;
 		int n = 3;
-		System.out.println("power nr " + Power_nr(x,n));
+		System.out.println("power (non-recursive) of " + x + " to the " + n + " is " + Power_nr(x,n));
 		if (n>=1)
-		   System.out.println("power " + Power(x,n));
+		   System.out.println("power of " + x + " to the " + n + " is " + Power(x,n));
 		else 
 		{
 			int result = Power(x,0-n);
-			System.out.println("power " + 1.0/result);
+			System.out.println("power of " + n + " is " + 1.0/result);
 		}
 		
-		System.out.println("factorial of n is "+ Factorial_nr(n));
+		System.out.println("factorial (non-recursive) of n is "+ Factorial_nr(n));
 		System.out.println("factorial of n is "+ Factorial(n));
 		
 
