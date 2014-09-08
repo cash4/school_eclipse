@@ -9,9 +9,7 @@ package recursion;
  * @author cash
  *
  */
-public class Assignment_1 {
-	
-	
+public class Assignment_1 {	
 	
 	//this method recursively checks if a word is a palindrome
 	public static boolean isPalindrome_r(String word){
@@ -22,6 +20,7 @@ public class Assignment_1 {
 			return isPalindrome_r(word.substring(1, word.length()-1));
 		return false;		
 	}
+	
 	//this method non-recursively checks if a word is a palindrome
 	public static boolean isPalindrome_nr(String word){
 		boolean result = false;
@@ -30,7 +29,6 @@ public class Assignment_1 {
 		end = word.length()-1;
 		middle = (begin+end)/2;
 		if (word.length()==0 || word.length()==1){
-			System.out.println(word);
 			result = true;
 		}
 				
@@ -51,22 +49,19 @@ public class Assignment_1 {
 			}
 		
 		return result;
-		
-
 	}
+	
 	//this method recursively computes Sum(n)=1+1/2+1/3+...1/n
 	public static double sum_r(double n){
 		//double endNumber = 0;
 		if (n == 1){
 			return 1;
 		}
-		else {
-			
-			return 1/n + sum_r(n-1);
-			
-		}
-		
+		else {			
+			return 1/n + sum_r(n-1);			
+		}	
 	}
+	
 	//this method non-recursively computes Sum(n)=1+1/2+1/3+...+1/n
 	public static double sum_nr(double n){
 		double result = 0;
@@ -86,6 +81,7 @@ public class Assignment_1 {
 			return getGcd_r(n, m%n);
 		}
 	}
+	
 	//this method allows you to non-recursively compute the greatest common divisor of two
 	//positive integer numbers
 	public static double getGcd_nr(int m, int n){
@@ -97,6 +93,7 @@ public class Assignment_1 {
 		}
 		return result;
 	}
+	
 	/**
 	 * @param args
 	 */
